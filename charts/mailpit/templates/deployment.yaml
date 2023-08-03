@@ -49,7 +49,6 @@ spec:
           args:
           - --db-file
           - /var/lib/mailpit/mailpit.db
-          - --smtp-auth-accept-any
           - --webroot
           - {{ .Values.mailpit.webroot }}
           {{- if .Values.mailpit.ui.authFile.enabled }}
