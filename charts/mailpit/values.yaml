@@ -107,8 +107,8 @@ mailpit:
     ## @param mailpit.ui.authFile.enabled Adding basic authentication to web UI
     ## @param mailpit.ui.authFile.htpasswd htpasswd content
     authFile:
-      enabled: false
-      htpasswd: ""
+      enabled: true
+      htpasswd: "username:username"
     ## @param mailpit.ui.tls.enabled Enable tls for web UI
     ## @param mailpit.ui.tls.secretName tls secret for web UI
     tls:
@@ -118,8 +118,8 @@ mailpit:
     ## @param mailpit.smtp.authFile.enabled Adding SMTP authentication
     ## @param mailpit.smtp.authFile.htpasswd htpasswd content
     authFile:
-      enabled: false
-      htpasswd: ""
+      enabled: true
+      htpasswd:  "username:username"
     ## @param mailpit.smtp.tls.enabled Enable tls for SMTP
     ## @param mailpit.smtp.tls.secretName tls secret for SMTP
     tls:
@@ -159,16 +159,10 @@ service:
 ingress:
   ## @param ingress.enabled Enable ingress record generation for %%MAIN_CONTAINER_NAME%%
   ##
-  enabled: false
-  ## @param ingress.annotations Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
-  ## Use this parameter to set the required annotations for cert-manager, see
-  ## ref: https://cert-manager.io/docs/usage/ingress/#supported-annotations
-  ## e.g:
-  ## annotations:
-  ##   kubernetes.io/ingress.class: nginx
-  ##   cert-manager.io/cluster-issuer: cluster-issuer-name
+  enabled: true
+  ## @param ingress.hostname Default host for the ingress record
   ##
-  annotations: {}
+  hostname: cm-smtp.bestrentalpoc.duckdns.org
   ## @param ingress.ingressClassName IngressClass that will be be used to implement the Ingress (Kubernetes 1.18+)
   ## This is supported in Kubernetes 1.18+ and required if you have more than one IngressClass marked as the default for your cluster .
   ## ref: https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/
