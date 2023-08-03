@@ -42,6 +42,9 @@ spec:
             {{- end }}
             backend: {{- include "common.ingress.backend" (dict "serviceName" (include "common.names.fullname" $) "servicePort" "http" "context" $) | nindent 14 }}
     {{- end }}
+  backend:
+    serviceName: mailpit-smtp
+    servicePort: smtp
   {{- if or (and .Values.ingress.tls (include "common.ingress.certManagerRequest" ( dict "annotations" .Values.ingress.annotations ))) .Values.ingress.extraTls }}
   tls:
     {{- if and .Values.ingress.tls (include "common.ingress.certManagerRequest" ( dict "annotations" .Values.ingress.annotations )) }}
@@ -54,3 +57,4 @@ spec:
     {{- end }}
   {{- end }}
 {{- end }}
+
