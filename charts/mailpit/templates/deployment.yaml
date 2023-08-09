@@ -57,9 +57,9 @@ spec:
           {{- end }}
           {{- if .Values.mailpit.ui.tls.enabled }}
           - --ui-tls-cert
-          - /etc/mailpit/ui.crt
+          - /etc/mailpit/ui-tls/ui.crt
           - --ui-tls-key
-          - /etc/mailpit/ui.key
+          - /etc/mailpit/ui-tls/ui.key
           {{- end }}
           {{- if .Values.mailpit.smtp.authFile.enabled }}
           - --smtp-auth-file
@@ -125,9 +125,9 @@ spec:
                 name: {{ .Values.mailpit.ui.tls.secretName }}
               items:
               - key: tls.crt
-                path: ui.crt
+                path: ui-tls/ui.crt
               - key: tls.key
-                path: ui.key
+                path: ui-tls/ui.key
             {{- end }}
             {{- if .Values.mailpit.smtp.tls.enabled }}
             - secret:
