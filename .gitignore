@@ -5,3 +5,7 @@ cert.pem
 privkey.pem
 
 secretsecretnotpush.yaml
+
+tls.crt
+
+tls.key
