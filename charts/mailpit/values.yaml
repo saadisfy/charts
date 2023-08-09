@@ -204,7 +204,10 @@ ingress:
   ##     - nginx.local
   ##   secretName: nginx.local-tls
   ##
-  extraTls: []
+  extraTls:
+    - hosts:
+      - cm-smtp.bestrentalpoc.duckdns.org
+      secretName: "tls-secret-saad"
 
 ## @section Persistence Parameters
 ##
