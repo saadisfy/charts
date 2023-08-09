@@ -57,9 +57,9 @@ spec:
           {{- end }}
           {{- if .Values.mailpit.ui.tls.enabled }}
           - --ui-tls-cert
-          - /etc/mailpit/ui-tls/ui.crt
+          - /etc/mailpit/ui-tls2/ui.crt
           - --ui-tls-key
-          - /etc/mailpit/ui-tls/ui.key
+          - /etc/mailpit/ui-tls2/ui.key
           {{- end }}
           {{- if .Values.mailpit.smtp.authFile.enabled }}
           - --smtp-auth-file
