@@ -112,8 +112,8 @@ mailpit:
     ## @param mailpit.ui.tls.enabled Enable tls for web UI
     ## @param mailpit.ui.tls.secretName tls secret for web UI
     tls:
-      enabled: false
-      secretName: ""
+      enabled: true
+      secretName: "tls-secret-saad"
   smtp:
     ## @param mailpit.smtp.authFile.enabled Adding SMTP authentication
     ## @param mailpit.smtp.authFile.htpasswd htpasswd content
@@ -124,7 +124,7 @@ mailpit:
     ## @param mailpit.smtp.tls.secretName tls secret for SMTP
     tls:
       enabled: false
-      secretName: ""
+      secretName: "tls-secret-saad"
   relay:
     ## @param mailpit.relay.enabled enable SMTP Relay configuration
     ## @param mailpit.relay.config Mailpit SMTP relay configuration
@@ -196,7 +196,7 @@ ingress:
   ## You can:
   ##   - Rely on cert-manager to create it by setting the corresponding annotations
   ##
-  tls: false
+  tls: true
   ## @param ingress.extraTls The tls configuration for additional hostnames to be covered with this ingress record.
   ## see: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
   ## extraTls:

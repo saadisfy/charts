@@ -1,1 +1,7 @@
 *.tgz
+
+cert.pem
+
+privkey.pem
+
+secretsecretnotpush.yaml
