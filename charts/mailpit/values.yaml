@@ -107,7 +107,7 @@ mailpit:
     ## @param mailpit.ui.authFile.enabled Adding basic authentication to web UI
     ## @param mailpit.ui.authFile.htpasswd htpasswd content
     authFile:
-      enabled: false
+      enabled: true
       htpasswd: "username:username"
     ## @param mailpit.ui.tls.enabled Enable tls for web UI
     ## @param mailpit.ui.tls.secretName tls secret for web UI
